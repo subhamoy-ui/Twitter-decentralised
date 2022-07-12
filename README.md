@@ -45,6 +45,4 @@ $ npx hardhat node
 
 License
 ----
-MIT
-
 "# Twitter-decentralised" 
