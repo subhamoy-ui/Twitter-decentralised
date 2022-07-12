@@ -77,8 +77,8 @@ const Profile =({contract}) => {
     }
     useEffect(() => {
         if(!nfts) {
-            loadMyNFTs()
-            // setLoading(false)
+            //loadMyNFTs()
+            setLoading(false)
         }
     })
     if (loading) return (
@@ -114,34 +114,7 @@ const Profile =({contract}) => {
                     </div>
                 </main> 
             </div>
-            {/* Render the other nfts the user owns that are not set as profile */}
-            <div className="px-5 container">
-                <Row xs={1} md={2} lg={4} className="g-4 py-5">
-                    {/* Map the nft array */}
-                    {nfts.map((nft,idx) => {
-                        // If it is set as the profile just return
-                        if (nft.id ===profile.id) return
-                        return(
-                            //represent the nfts as cards.
-                            <Col key={idx} className="overflow-hidden">
-                                <Card>
-                                    <Card.Img variant="top" src={nft.avatar}/>
-                                    <Card.Body color="secondary">
-                                        <Card.Title>{nft.username}</Card.Title>
-                                    </Card.Body>
-                                    <Card.Footer>
-                                        <div className='d-grid'>
-                                            <Button onClick={() => switchProfile(nft)} variant="primary" size="lg">
-                                                Set as Profile
-                                            </Button>
-                                        </div>
-                                    </Card.Footer>
-                                </Card>
-                            </Col>
-                        )
-                    })}
-                </Row>
-            </div>
+           
         </div>
     );
 }
